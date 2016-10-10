@@ -5,8 +5,8 @@ public class StringCalculator {
 	{
 		//System.out.println(numbers);
 		int sum = 0;
-		String[] tokens = new String[3];
-		for(int i=0; i<3; i++)
+		String[] tokens = new String[numbers.length()];
+		for(int i=0; i<numbers.length(); i++)
 			tokens[0] = "0";
 		if(numbers == "")
 			return 0;
@@ -15,7 +15,7 @@ public class StringCalculator {
 		else
 			return Integer.parseInt(numbers);
 
-		for(int i = 0; i<2; i++){
+		for(int i = 0; i<tokens.length; i++){
 			sum += Integer.parseInt(tokens[i]);
 			//System.out.println(sum);
 			
@@ -25,10 +25,11 @@ public class StringCalculator {
 	public static void main(String[] args){
 		StringCalculator sc = new StringCalculator();
 		String str;
+		str = "";
 		//str = "13,2";
 		//str = "34";
-		str = "";
-				
+		//str = "1,2,3,4";
+		//str = "23,1,567";
 		System.out.println(sc.Add(str));
 	}
 }
