@@ -10,8 +10,8 @@ public class StringCalculator {
 			tokens[0] = "0";
 		if(numbers == "")
 			return 0;
-		else if(numbers.contains(","))
-			tokens = numbers.split(",");
+		else if(numbers.contains(",") || numbers.contains("\n"))
+			tokens = numbers.split("\\W+");
 		else
 			return Integer.parseInt(numbers);
 
@@ -25,11 +25,13 @@ public class StringCalculator {
 	public static void main(String[] args){
 		StringCalculator sc = new StringCalculator();
 		String str;
-		str = "";
+		//str = "";
 		//str = "13,2";
 		//str = "34";
 		//str = "1,2,3,4";
 		//str = "23,1,567";
+		str = "1\n2,3";
 		System.out.println(sc.Add(str));
 	}
 }
+
