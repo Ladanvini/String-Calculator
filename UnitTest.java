@@ -5,6 +5,7 @@ public class UnitTest {
 	
 	public UnitTest(){
 		strings = new Vector<String>();
+		strings.add("//;\n1;2");
 		strings.add("");
 		strings.add("13,2");
 		strings.add("34");
@@ -16,7 +17,8 @@ public class UnitTest {
 		strings.add("1001,2");
 		strings.add("1001,2,3");
 		strings.add("1001,2,-3");
-
+		strings.add("//;\n1001,2;-3");
+		strings.add("//;\n1001;2;3");
 	}
 	public String testAdd(){
 		//System.out.println("in testAdd");
@@ -54,6 +56,7 @@ public class UnitTest {
 	public Boolean checkTest(String testStr)
 	{
 		String correctString = "$\n";
+		correctString.concat("2\n");
 		correctString.concat("0\n");
 		correctString.concat("15\n");
 		correctString.concat("34\n");
@@ -65,7 +68,9 @@ public class UnitTest {
 		correctString.concat("2\n");
 		correctString.concat("5\n");
 		correctString.concat("negative numbers not allowed -3\n");
-
+		correctString.concat("negative numbers not allowed -3\n");
+		correctString.concat("5\n");
+		
 		if(testStr.equals(correctString))
 			return true;
 
